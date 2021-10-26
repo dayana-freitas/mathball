@@ -4,14 +4,14 @@ Ball.Game.prototype = {
 		this.add.sprite(0, 0, 'screen-bg');  
 		this.add.sprite(0, 0, 'panel');
 		this.physics.startSystem(Phaser.Physics.ARCADE);
-		this.fontSmall = { font: "16px Arial", fill: "#e4beef" };
-		this.fontBig = { font: "24px Arial", fill: "#e4beef" };
-		this.fontMessage = { font: "24px Arial", fill: "#e4beef",  align: "center", stroke: "#320C3E", strokeThickness: 4 };
+		this.fontSmall = { font: "15px Arial", fill: "#FEE135" };
+		this.fontBig = { font: "24px Arial", fill: "#FEE135" };
+		this.fontMessage = { font: "24px Arial", fill: "#FEE135",  align: "center", stroke: "#320C3E", strokeThickness: 4 };
 		this.audioStatus = true;
 		this.timer = 0;
 		this.totalTimer = 0;
-		this.level = 1;
-		this.maxLevels = 3; //COLOCAR NUMERO DE FASES;
+		this.level = 5;
+		this.maxLevels = 5; //COLOCAR NUMERO DE FASES;
 		this.movementForce = 10;
 		this.ballStartPos = {x: Ball._WIDTH * 0.5, y: 450}; 
 
@@ -81,6 +81,26 @@ Ball.Game.prototype = {
 				{x: 0, y: 240, t:'w'},
 				{x: 128, y: 240 , t:'w'},
 				{x: 200,y: 52, t:'h'} 
+			 ],
+			 //fase 4
+			 [
+			    {x: 64, y:352 , t:'h'},
+				{x: 224,y: 352, t:'h'},
+				{x: 0, y: 240, t:'w'},
+				{x: 128, y: 240 , t:'w'},
+				{x: 200,y: 52, t:'h'} 
+			 ],
+			 //fase 5
+			 [
+				{x: 80, y: 100, t:'w'},
+				{x: 160, y: 200, t:'w'},
+				{x: 0, y: 250 , t:'w'},
+				{x: 50, y: 300 , t:'w'},
+				{x: 0, y: 400, t:'w'},
+			    {x: 50, y: 100 , t:'h'},
+				{x: 110, y: 150, t:'h'},
+				{x: 200, y: 300, t:'h'},
+				{x: 250, y: 400, t:'h'} 
 			 ]
 		];
 		
@@ -197,6 +217,34 @@ Ball.Game.prototype = {
 			}
 	        			
            else if(this.level == 3)
+		   {
+		      	v = window.prompt("Qual o nome do framework que faz o acesso aos recursos do dispositivo(celular)?")
+			     if(v == "cordova")
+			     {
+			         alert('Parabéns, Fase: ' + this.level + 'concluida');
+					 this.level++;			
+		       	}
+			    else
+			   {			
+        			alert("Resposta Incorreta , você não vai para próxima fase :(");
+			  	
+			    }
+			}
+			else if(this.level == 4)
+		   {
+		      	v = window.prompt("Qual o nome do framework que faz o acesso aos recursos do dispositivo(celular)?")
+			     if(v == "cordova")
+			     {
+			         alert('Parabéns, Fase: ' + this.level + 'concluida');
+					 this.level++;			
+		       	}
+			    else
+			   {			
+        			alert("Resposta Incorreta , você não vai para próxima fase :(");
+			  	
+			    }
+			}
+			else if(this.level == 5)
 		   {
 		      	v = window.prompt("Qual o nome do framework que faz o acesso aos recursos do dispositivo(celular)?")
 			     if(v == "cordova")
