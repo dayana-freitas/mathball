@@ -10,7 +10,7 @@ Ball.Game.prototype = {
 		this.audioStatus = true;
 		this.timer = 0;
 		this.totalTimer = 0;
-		this.level = 5;
+		this.level = 1;
 		this.maxLevels = 5; //COLOCAR NUMERO DE FASES;
 		this.movementForce = 10;
 		this.ballStartPos = {x: Ball._WIDTH * 0.5, y: 450}; 
@@ -65,42 +65,54 @@ Ball.Game.prototype = {
 			//PREENCHER AS FASES COM AS IMAGENS HORIZONTAL E VERTICAL
 			//fase 1
 			[
-				{x:  67 , y : 224 , t:'w'},
-                {x : 78,  y: 320, t:'h'}				
+				{x:  60 , y : 200 , t:'w'},
+
+                {x : 85,  y: 320, t:'h'},
+				{x : 230,  y: 105, t:'h'}
 			],
 			//fase 2
 			[
-			   {x: 72 , y: 320 , t:'w'},
-			   {x: 200, y: 320, t:'h'},
-			   {x: 72, y:150, t:'w'}   
+				{x: 65, y:150, t:'w'},
+				{x: 72 , y: 320 , t:'w'},
+
+				{x: 200, y: 320, t:'h'},
+				{x : 230,  y: 100, t:'h'}				
+
 			 ],
 			 //fase 3
 			 [
-			    {x: 64, y:352 , t:'h'},
-				{x: 224,y: 352, t:'h'},
 				{x: 0, y: 240, t:'w'},
 				{x: 128, y: 240 , t:'w'},
+
+			    {x: 64, y:352 , t:'h'},
+				{x: 224,y: 352, t:'h'},
 				{x: 200,y: 52, t:'h'} 
 			 ],
 			 //fase 4
 			 [
-			    {x: 64, y:352 , t:'h'},
-				{x: 224,y: 352, t:'h'},
-				{x: 0, y: 240, t:'w'},
-				{x: 128, y: 240 , t:'w'},
-				{x: 200,y: 52, t:'h'} 
+			    {x: 80, y: 105, t:'w'}, //1 Deitado
+				{x: 190, y: 105, t:'w'}, //2
+				{x: 0, y: 255 , t:'w'}, //3
+				{x: 100, y: 360, t:'w'}, //4
+
+				{x: 200, y: 105, t:'h'}, //3
+				{x: 200, y: 315, t:'h'}, //4
 			 ],
 			 //fase 5
 			 [
-				{x: 80, y: 100, t:'w'},
-				{x: 160, y: 200, t:'w'},
-				{x: 0, y: 250 , t:'w'},
-				{x: 50, y: 300 , t:'w'},
-				{x: 0, y: 400, t:'w'},
-			    {x: 50, y: 100 , t:'h'},
-				{x: 110, y: 150, t:'h'},
-				{x: 200, y: 300, t:'h'},
-				{x: 250, y: 400, t:'h'} 
+				{x: 80, y: 105, t:'w'}, //1 Deitado
+				{x: 190, y: 105, t:'w'}, //2
+				{x: -5, y: 255 , t:'w'}, //3
+				{x: 170, y: 250 , t:'w'}, //4
+				{x: 50, y: 305 , t:'w'}, //5
+				{x: 30, y: 360, t:'w'}, //6
+
+			    {x: 48, y: 105 , t:'h'}, //1 De pé
+				{x: 105, y: 159, t:'h'}, //2
+				{x: 200, y: 105, t:'h'}, //3
+				{x: 200, y: 315, t:'h'}, //4
+				{x: 100, y: 420, t:'h'},  //5
+				{x: 260, y: 400, t:'h'}  //6
 			 ]
 		];
 		
@@ -179,7 +191,7 @@ Ball.Game.prototype = {
 	finishLevel: function() {
 		if(this.level >= this.maxLevels) {
 			this.totalTimer += this.timer;
-			alert('Parabéns , você completou a fase \n Tempo: '  +  this.totalTimer + 'segundos');
+			alert('Parabéns!!! Você zerou o jogo em: '  +  this.totalTimer + 'segundos');
 		
 
 			this.game.state.start('MainMenu');
@@ -189,10 +201,10 @@ Ball.Game.prototype = {
 		//PREENCHER AS CONDIÇÕES DE CADA FASE
 		   if(this.level ==1)
 		   {
-		      	v = window.prompt("Qual nome do framework que usamos para mobile?")
-			     if(v == "phonegap")
+		      	v = window.prompt("O método resolutivo de equação do primeiro grau é popularmente conhecido como fórmula de:")
+			     if(v == "bhaskara")
 			     {
-			         alert('Parabéns , Fase :' + this.level + 'concluída');
+			         alert('Parabéns!!! Fase ' + this.level + ' concluída');
 					    this.level++;			
 		       	}
 			    else
@@ -203,10 +215,10 @@ Ball.Game.prototype = {
 			
 	            else if(this.level == 2)
 		   {
-		      	v = window.prompt("Qual a linguagem que usamos para programar os eventos dos botões em Mobile?")
-			     if(v == "javascript")
+		      	v = window.prompt("Na fórmula da área do círculo A = C / 2 * pi, C é:")
+			     if(v == "circunferência")
 			     {
-			         alert('Parabéns, Fase: ' + this.level + 'concluida');
+			         alert('Parabéns!!! Fase ' + this.level + ' concluída');
 					 this.level++;			
 		       	}
 			    else
@@ -218,10 +230,10 @@ Ball.Game.prototype = {
 	        			
            else if(this.level == 3)
 		   {
-		      	v = window.prompt("Qual o nome do framework que faz o acesso aos recursos do dispositivo(celular)?")
-			     if(v == "cordova")
+		      	v = window.prompt("Resolva: sen * sen + cos * cos =")
+			     if(v == "1")
 			     {
-			         alert('Parabéns, Fase: ' + this.level + 'concluida');
+			         alert('Parabéns!!! Fase ' + this.level + ' concluída');
 					 this.level++;			
 		       	}
 			    else
@@ -232,10 +244,10 @@ Ball.Game.prototype = {
 			}
 			else if(this.level == 4)
 		   {
-		      	v = window.prompt("Qual o nome do framework que faz o acesso aos recursos do dispositivo(celular)?")
-			     if(v == "cordova")
+		      	v = window.prompt("Na resolução de um exercício de matemática, qual forma geométrica indica que o exercício foi concluído?")
+			     if(v == "quadrado")
 			     {
-			         alert('Parabéns, Fase: ' + this.level + 'concluida');
+			         alert('Parabéns!!! Fase ' + this.level + ' concluída');
 					 this.level++;			
 		       	}
 			    else
@@ -246,10 +258,10 @@ Ball.Game.prototype = {
 			}
 			else if(this.level == 5)
 		   {
-		      	v = window.prompt("Qual o nome do framework que faz o acesso aos recursos do dispositivo(celular)?")
-			     if(v == "cordova")
+		      	v = window.prompt("O sinal do seno no primeiro e quarto quadrante é:")
+			     if(v == "positivo")
 			     {
-			         alert('Parabéns, Fase: ' + this.level + 'concluida');
+			         alert('Parabéns!!! Fase ' + this.level + ' concluída');
 					 this.level++;			
 		       	}
 			    else
