@@ -4,9 +4,9 @@ Ball.Game.prototype = {
 		this.add.sprite(0, 0, 'screen-bg');  
 		this.add.sprite(0, 0, 'panel');
 		this.physics.startSystem(Phaser.Physics.ARCADE);
-		this.fontSmall = { font: "15px Arial", fill: "#FEE135" };
-		this.fontBig = { font: "24px Arial", fill: "#FEE135" };
-		this.fontMessage = { font: "24px Arial", fill: "#FEE135",  align: "center", stroke: "#320C3E", strokeThickness: 4 };
+		this.fontSmall = { font: "15px Arial", fill: "#02032a", fontWeight: "bold" };
+		this.fontBig = { font: "24px Arial", fill: "#02032a" };
+		this.fontMessage = { font: "24px Arial", fill: "#02032a",  align: "center", stroke: "#320C3E", strokeThickness: 4 };
 		this.audioStatus = true;
 		this.timer = 0;
 		this.totalTimer = 0;
